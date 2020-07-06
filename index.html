@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<<<<<<< Updated upstream
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -41,4 +42,282 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="./moment-with-locales.js"></script>
     <script src="./timer.js"></script>
+=======
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Simple Ragnarok MVP timer</title>
+</head>
+
+<body>
+
+    <!-- Amon Ra -->
+    <div class="main-div">
+        <div class="card">
+            <h5 class="card-title">Amon Ra</h5>
+            <img class="card-img-top" src="./resources/amonra.gif" alt="Card image cap width=" 150 " height="150 "">
+            <div class="card-body">
+                <p class="card-text" id="amonra-time">1 Hora</p>
+                <input class="form-control time-input" type="time" id="amonra-time-input">
+                <button id="amonra-btn" class="btn btn-success" onclick="regenerateTimer('\amonra')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Abelha-Rainha -->
+        <div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="mjolnir_04-tab" data-toggle="tab" href="#mjolnir_04" role="tab" aria-controls="mjolnir_04" aria-selected="true">mjolnir_04</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="gld_dun02-tab" data-toggle="tab" href="#gld_dun02" role="tab" aria-controls="gld_dun02" aria-selected="false">gld_dun02</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="mjolnir_04" role="tabpanel" aria-labelledby="mjolnir_04-tab">
+                    <div class="card">
+                        <h5 class="card-title">Abelha-Rainha</h5>
+                        <img class="card-img-top" src="./resources/abelhaRainha.gif" alt="Card image cap" width="7rem" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="mjolnir_04-time">2 Horas</p>
+                            <input class="form-control time-input" type="time" id="mjolnir_04-time-input">
+                            <button id="mjolnir_04-btn" class="btn btn-success" onclick="regenerateTimer('\mjolnir_04')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="gld_dun02" role="tabpanel" aria-labelledby="gld_dun02-tab">
+                    <div class="card">
+                        <h5 class="card-title">Abelha-Rainha</h5>
+                        <img class="card-img-top" src="./resources/abelhaRainha.gif" alt="Card image cap" width="7rem" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="gld_dun02-time">8 Horas</p>
+                            <input class="form-control time-input" type="time" id="gld_dun02-time-input">
+                            <button id="gld_dun02-btn" class="btn btn-success" onclick="regenerateTimer('\gld_dun02')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Amon Ra Pesadelo -->
+        <div class="card">
+            <h5 class="card-title">Amon Ra do Pesadelo</h5>
+            <img class="card-img-top" src="./resources/amonraPesadelo.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="amonraPesadelo-time">1 Hora</p>
+                <input class="form-control time-input" type="time" id="amonraPesadelo-time-input">
+                <button id="amonraPesadelo-btn" class="btn btn-success" onclick="regenerateTimer('\amonraPesadelo')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Atroce -->
+        <div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ra_fild03-tab" data-toggle="tab" href="#ra_fild03" role="tab" aria-controls="ra_fild03" aria-selected="true">ra_fild03</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ra_fild04-tab" data-toggle="tab" href="#ra_fild04" role="tab" aria-controls="ra_fild04" aria-selected="false">ra_fild04</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ve_fild01-tab" data-toggle="tab" href="#ve_fild01" role="tab" aria-controls="ve_fild01" aria-selected="false">ve_fild01</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ve_fild02-tab" data-toggle="tab" href="#ve_fild02" role="tab" aria-controls="ve_fild02" aria-selected="false">ve_fild02</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="gld_dun03_2-tab" data-toggle="tab" href="#gld_dun03_2" role="tab" aria-controls="gld_dun03_2" aria-selected="false">gld_dun03_2</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="ra_fild03" role="tabpanel" aria-labelledby="ra_fild03-tab">
+                    <div class="card">
+                        <h5 class="card-title">Atroce</h5>
+                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="ra_fild03-time">3 Horas</p>
+                            <input class="form-control time-input" type="time" id="ra_fild03-time-input">
+                            <button id="ra_fild03-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild03')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="ra_fild04" role="tabpanel" aria-labelledby="ra_fild04-tab">
+                    <div class="card">
+                        <h5 class="card-title">Atroce</h5>
+                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="ra_fild04-time">5 Horas</p>
+                            <input class="form-control time-input" type="time" id="ra_fild04-time-input">
+                            <button id="ra_fild04-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild04')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="ve_fild01" role="tabpanel" aria-labelledby="ve_fild01-tab">
+                    <div class="card">
+                        <h5 class="card-title">Atroce</h5>
+                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="ve_fild01-time">3 Horas</p>
+                            <input class="form-control time-input" type="time" id="ve_fild01-time-input">
+                            <button id="ve_fild01-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild01')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="ve_fild02" role="tabpanel" aria-labelledby="ve_fild02-tab">
+                    <div class="card">
+                        <h5 class="card-title">Atroce</h5>
+                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="ve_fild02-time">6 Horas</p>
+                            <input class="form-control time-input" type="time" id="ve_fild02-time-input">
+                            <button id="ve_fild02-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild02')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="gld_dun03_2" role="tabpanel" aria-labelledby="gld_dun03_2-tab">
+                    <div class="card">
+                        <h5 class="card-title">Atroce</h5>
+                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="gld_dun03_2-time">8 Horas</p>
+                            <input class="form-control time-input" type="time" id="gld_dun03_2-time-input">
+                            <button id="gld_dun03_2-btn" class="btn btn-success" onclick="regenerateTimer('gld_dun03_2')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aprendiz -->
+        <div class="card">
+            <h5 class="card-title">Aprendiz</h5>
+            <img class="card-img-top" src="./resources/aprendiz.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="aprendiz-time">1 Hora</p>
+                <input class="form-control time-input" type="time" id="aprendiz-time-input">
+                <button id="aprendiz-btn" class="btn btn-success" onclick="regenerateTimer('\aprendiz')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Bafomé -->
+        <div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="prt_maze03-tab" data-toggle="tab" href="#prt_maze03" role="tab" aria-controls="prt_maze03" aria-selected="true">prt_maze03</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="gld_dun03-tab" data-toggle="tab" href="#gld_dun03" role="tab" aria-controls="gld_dun03" aria-selected="false">gld_dun03</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="prt_maze03" role="tabpanel" aria-labelledby="prt_maze03-tab">
+                    <div class="card">
+                        <h5 class="card-title">Bafomé</h5>
+                        <img class="card-img-top" src="./resources/bafome.gif" alt="Card image cap" width="7rem" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="prt_maze03-time">2 Horas</p>
+                            <input class="form-control time-input" type="time" id="prt_maze03-time-input">
+                            <button id="prt_maze03-btn" class="btn btn-success" onclick="regenerateTimer('\prt_maze03')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="gld_dun03" role="tabpanel" aria-labelledby="gld_dun03-tab">
+                    <div class="card">
+                        <h5 class="card-title">Bafomé</h5>
+                        <img class="card-img-top" src="./resources/bafome.gif" alt="Card image cap" width="7rem" height="150">
+                        <div class="card-body">
+                            <p class="card-text" id="gld_dun03-time">8 Horas</p>
+                            <input class="form-control time-input" type="time" id="gld_dun03-time-input">
+                            <button id="gld_dun03-btn" class="btn btn-success" onclick="regenerateTimer('\gld_dun03')">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bafomé Amaldiçoado -->
+        <div class="card">
+            <h5 class="card-title">Bafomé Amaldiçoado</h5>
+            <img class="card-img-top" src="./resources/bafome.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="bafoAmaldicoado-time">2 Horas</p>
+                <input class="form-control time-input" type="time" id="bafoAmaldicoado-time-input">
+                <button id="bafoAmaldicoado-btn" class="btn btn-success" onclick="regenerateTimer('\bafoAmaldicoado')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Bubu -->
+        <div class="card">
+            <h5 class="card-title">Belzebu</h5>
+            <img class="card-img-top" src="./resources/bubu.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="belzebu-time">12 Horas</p>
+                <input class="form-control time-input" type="time" id="belzebu-time-input">
+                <button id="belzebu-btn" class="btn btn-success" onclick="regenerateTimer('\belzebu')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- GTB -->
+        <div class="card">
+            <h5 class="card-title">Besouro-Ladrão Dourado</h5>
+            <img class="card-img-top" src="./resources/gtb.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="gtb-time">1 Hora</p>
+                <input class="form-control time-input" type="time" id="gtb-time-input">
+                <button id="gtb-btn" class="btn btn-success" onclick="regenerateTimer('\gtb')">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Bispo Decadente -->
+        <div class="card">
+            <h5 class="card-title">Bispo Decadente</h5>
+            <img class="card-img-top" src="./resources/bispo.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="bispo-time">2 Horas</p>
+                <input class="form-control time-input" type="time" id="bispo-time-input">
+                <button id="bispo-btn" class="btn btn-success" onclick="regenerateTimer('\bispo')">Reiniciar</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- SEPARADOR -->
+    </div>
+
+
+</body>
+
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+<script src="./moment-with-locales.js"></script>
+<script src="./timer.js"></script>
+
+>>>>>>> Stashed changes
 </html>
