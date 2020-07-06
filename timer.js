@@ -22,9 +22,16 @@ function clock(deathHour, deathMinute, spawnTime, div, mvp) {
 }
 
 mvpMap = {
-    amonra : (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', "#amonra-time", "amonra"),
-    abelhaRainha : (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', "#abelhaRainha-time", "abelhaRainha"),
-    amonraPesadelo : (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', "#amonraPesadelo-time", "amonraPesadelo")
+    amonra          : (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', "#amonra-time", "amonra"),
+    mjolnir_04      : (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', "#mjolnir_04-time", "mjolnir_04"),
+    gld_dun02       : (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', "#gld_dun02-time", "gld_dun02"),
+    amonraPesadelo  : (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', "#amonraPesadelo-time", "amonraPesadelo"),
+    ra_fild03       : (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#ra_fild03-time", "ra_fild03"),
+    ra_fild04       : (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', "#ra_fild04-time", "ra_fild04"),
+    ve_fild01       : (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#ve_fild01-time", "ve_fild01"),
+    ve_fild02       : (deathHour, deathMinute) => clock(deathHour, deathMinute, '6', "#ve_fild02-time", "ve_fild02"),
+    gld_dun03_2     : (deathHour, deathMinute) => clock(deathHour, deathMinute, '6', "#gld_dun03_2-time", "gld_dun03_2"),
+    aprendiz        : (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#aprendiz-time", "aprendiz"),
 };
 
 function regenerateTimer(mvp) {
@@ -36,8 +43,15 @@ function regenerateTimer(mvp) {
 
 function init(){
     mvpMap["amonra"]();
-    mvpMap["abelhaRainha"]();
+    mvpMap["mjolnir_04"]();
     mvpMap["amonraPesadelo"]();
+    mvpMap["ra_fild03"]();
+    mvpMap["ra_fild04"]();
+    mvpMap["ve_fild01"]();
+    mvpMap["ve_fild02"]();
+    mvpMap["gld_dun03_2"]();
+    mvpMap["gld_dun02"]();
+    mvpMap["aprendiz"]();
 }
 
 
