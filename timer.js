@@ -47,19 +47,8 @@ function regenerateTimer(mvp) {
 }
 
 function init() {
-    mvpMap["amonra"]();
-    mvpMap["mjolnir_04"]();
-    mvpMap["amonraPesadelo"]();
-    mvpMap["ra_fild03"]();
-    mvpMap["ra_fild04"]();
-    mvpMap["ve_fild01"]();
-    mvpMap["ve_fild02"]();
-    mvpMap["gld_dun03_2"]();
-    mvpMap["gld_dun02"]();
-    mvpMap["aprendiz"]();
-    mvpMap["prt_maze03"]();
-    mvpMap["gld_dun03"]();
-    mvpMap["bafoAmaldicoado"]();
+    let mvpTimers = Object.values(mvpMap);
+    mvpTimers.forEach((value) => value());
 }
 
 
