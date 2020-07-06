@@ -15,7 +15,7 @@ function clock(deathHour, deathMinute, spawnTime, div, mvp) {
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         $(div).html(hours + "h " + minutes + "m " + seconds + "s");  
-        if(distance <= 0){
+        if(distance <= 0 && distance >= -600000) {
             $(div).html("Em Respawn!"); 
         }
     }, 1000)
@@ -29,8 +29,9 @@ mvpMap = {
 
 function regenerateTimer(mvp) {
     clearInterval(intervals[mvp]);
-    console.log(mvp)
-    mvpMap[mvp]();
+    let timeDiv = "#" + mvp + "-time-input";
+    let hourMinute = $(timeDiv).val().split(':')
+    mvpMap[mvp](hourMinute[0], hourMinute[1]);
 }
 
 function init(){

@@ -1,60 +1,66 @@
 <!doctype html>
 <html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-        <link rel="stylesheet" href="index.css" />
-        
-        <title>Simple Ragnarok MVP timer</title>
-    </head>
-    
-    <body>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Simple Ragnarok MVP timer</title>
+</head>
+
+<body>
+    <div class="main-div">
         <div class="card">
-            <img class="card-img-top" src="./resources/amonra.gif" alt="Card image cap">
+            <h5 class="card-title">Amon Ra</h5>
+            <img class="card-img-top" src="./resources/amonra.gif" alt="Card image cap width="150" height="150"">
             <div class="card-body">
-              <h5 class="card-title">Amon Ra</h5>
-              <p class="card-text" id="amonra-time">1 hora</p>
-              <div class="col-10">
+                <p class="card-text" id="amonra-time">1 hora</p>
                 <input class="form-control time-input" type="time" id="amonra-time-input">
+                <button id="amonra-btn" class="btn btn-success" onclick="regenerateTimer('\amonra')">Reiniciar</button>
             </div>
-            <button id="amonra-btn" class="btn btn-success" onclick="regenerateTimer('\amonra')">Reiniciar</button>
-            </div>
-        </div><br>
+        </div>
 
         <div class="card">
-            <img class="card-img-top" src="./resources/abelhaRainha.gif" alt="Card image cap">
+            <h5 class="card-title">Abelha-Rainha</h5>
+            <img class="card-img-top" src="./resources/abelhaRainha.gif" alt="Card image cap" width="7rem" height="150">
             <div class="card-body">
-              <h5 class="card-title">Abelha-Rainha</h5>
-              <p class="card-text" id="abelhaRainha-time">1 hora</p>
-              <div class="col-10">
+                <p class="card-text" id="abelhaRainha-time">2 horas</p>
                 <input class="form-control time-input" type="time" id="abelhaRainha-time-input">
+                <button id="abelhaRainha-btn" class="btn btn-success"
+                    onclick="regenerateTimer('\abelhaRainha')">Reiniciar</button>
             </div>
-            <button id="abelhaRainha-btn" class="btn btn-success" onclick="regenerateTimer('\abelhaRainha')">Reiniciar</button>
-            </div>
-        </div><br>
+        </div>
 
         <div class="card">
-            <img class="card-img-top" src="./resources/amonraPesadelo.gif" alt="Card image cap">
+            <h5 class="card-title">Amon Ra do Pesadelo</h5>
+            <img class="card-img-top" src="./resources/amonraPesadelo.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
-              <h5 class="card-title">Amon Ra do Pesadelo</h5>
-              <p class="card-text" id="amonraPesadelo-time">1 hora</p>
-              <div class="col-10">
+                <p class="card-text" id="amonraPesadelo-time">1 hora</p>
                 <input class="form-control time-input" type="time" id="amonraPesadelo-time-input">
+                <button id="amonraPesadelo-btn" class="btn btn-success"
+                    onclick="regenerateTimer('\amonraPesadelo')">Reiniciar</button>
             </div>
-            <button id="amonraPesadelo-btn" class="btn btn-success" onclick="regenerateTimer('\amonraPesadelo')">Reiniciar</button>
-            </div>
-        </div><br>
+        </div>
+    </div>
+    
 
-    </body>
-    <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="./moment-with-locales.js"></script>
-    <script src="./timer.js"></script>
+</body>
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+<script src="./moment-with-locales.js"></script>
+<script src="./timer.js"></script>
+
 </html>
