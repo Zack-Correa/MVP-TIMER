@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-#test-clock{
+#test-clock {
     background-color: aquamarine;
 }
 
@@ -29,11 +29,10 @@
 }
 
 .card {
-    width:100%;
+    width: 100%;
     height: 100%;
     text-align: center;
-    box-shadow: 16px 18px 17px -19px rgba(0,0,0,0.75);
-
+    box-shadow: 16px 18px 17px -19px rgba(0, 0, 0, 0.75);
 }
 
 .card-img-top {
@@ -43,4 +42,8 @@
 
 .card-text {
     font-weight: bold;
+}
+
+div {
+    outline: 1px solid red !important;
 }
