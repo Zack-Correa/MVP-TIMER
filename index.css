@@ -1,3 +1,11 @@
 #test-clock{
     background-color: aquamarine;
 }
+.time-input {
+    width: 200%;
+    margin-left:-38%
+}
+
+.card {
+    width:130px;
+}
