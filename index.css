@@ -38,6 +38,7 @@
 .card-img-top {
     width: 7rem;
     align-self: center;
+    object-fit: none;
 }
 
 .card-text {
