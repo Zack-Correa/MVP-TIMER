@@ -30,13 +30,14 @@ mvpMap = {
     ra_fild04: (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', "#ra_fild04-time", "ra_fild04"),
     ve_fild01: (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#ve_fild01-time", "ve_fild01"),
     ve_fild02: (deathHour, deathMinute) => clock(deathHour, deathMinute, '6', "#ve_fild02-time", "ve_fild02"),
-    gld_dun03_2: (deathHour, deathMinute) => clock(deathHour, deathMinute, '6', "#gld_dun03_2-time", "gld_dun03_2"),
+    gld_dun03_2: (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', "#gld_dun03_2-time", "gld_dun03_2"),
     aprendiz: (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#aprendiz-time", "aprendiz"),
     prt_maze03: (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', "#prt_maze03-time", "prt_maze03"),
     gld_dun03: (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', "#gld_dun03-time", "gld_dun03"),
     bafoAmaldicoado: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', "#bafoAmaldicoado-time", "bafoAmaldicoado"),
     belzebu: (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', "#belzebu-time", "belzebu"),
     gtb: (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', "#gtb-time", "gtb"),
+    bispo: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', "#bispo-time", "bispo"),
 };
 
 function regenerateTimer(mvp) {
