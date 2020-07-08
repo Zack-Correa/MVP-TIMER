@@ -86,7 +86,9 @@ mvpMap = {
     taoGunka: (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#taoGunka-time", "taoGunka"),
     valk: (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#valk-time", "valk"),
     vesper: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#vesper-time", "vesper"),
-    timeholder: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#timeholder-time", "timeholder")
+    timeholder: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#timeholder-time", "timeholder"),
+    gemaring: (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gemaring-time", "gemaring"),
+    hatii: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#hatii-time", "hatii"),
 };
 
 function regenerateTimer(mvp) {

@@ -6,10 +6,16 @@
 .main-div {
     height: 100%;
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, 300px); */
     grid-template-columns: repeat(3, 1fr);
     gap: 1vw;
     padding: 2%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .main-div {
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
 }
 
 .card-body {

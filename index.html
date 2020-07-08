@@ -8,15 +8,19 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
     <link rel="stylesheet" href="index.css" />
 
-    <title>Simple Ragnarok MVP timer</title>
+    <title>Timer MVP Ragnarok</title>
 </head>
 
 <body>
     <div class="main-div">
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="moc_pryd06-tab" data-toggle="tab" href="#moc_pryd06" role="tab" aria-controls="moc_pryd06" aria-selected="true">moc_pryd06</a>
+                </li>
+            </ul>
             <h5 class="card-title">Amon Ra</h5>
             <img class="card-img-top" src="./resources/amonra.gif" alt="Card image cap width=" 150 " height="150 "">
             <div class="card-body">
@@ -60,6 +64,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="moc_prydn2-tab" data-toggle="tab" href="#moc_prydn2" role="tab" aria-controls="moc_prydn2" aria-selected="true">moc_prydn2</a>
+                </li>
+            </ul>
             <h5 class="card-title">Amon Ra do Pesadelo</h5>
             <img class="card-img-top" src="./resources/amonraPesadelo.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -69,88 +78,97 @@
             </div>
         </div>
         <div>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="ra_fild03-tab" data-toggle="tab" href="#ra_fild03" role="tab" aria-controls="ra_fild03" aria-selected="true">ra_fild03</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="ra_fild04-tab" data-toggle="tab" href="#ra_fild04" role="tab" aria-controls="ra_fild04" aria-selected="false">ra_fild04</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="ve_fild01-tab" data-toggle="tab" href="#ve_fild01" role="tab" aria-controls="ve_fild01" aria-selected="false">ve_fild01</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="ve_fild02-tab" data-toggle="tab" href="#ve_fild02" role="tab" aria-controls="ve_fild02" aria-selected="false">ve_fild02</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="gld_dun03_2-tab" data-toggle="tab" href="#gld_dun03_2" role="tab" aria-controls="gld_dun03_2" aria-selected="false">gld_dun03_2</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="ra_fild03" role="tabpanel" aria-labelledby="ra_fild03-tab">
-                    <div class="card">
-                        <h5 class="card-title">Atroce</h5>
-                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
-                        <div class="card-body">
-                            <p class="card-text" id="ra_fild03-time">3 horas</p>
-                            <input class="form-control time-input" type="time" id="ra_fild03-time-input">
-                            <button id="ra_fild03-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild03')">Reiniciar</button>
+            <div class="card">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="ra_fild03-tab" data-toggle="tab" href="#ra_fild03" role="tab" aria-controls="ra_fild03" aria-selected="true">ra_fild03</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ra_fild04-tab" data-toggle="tab" href="#ra_fild04" role="tab" aria-controls="ra_fild04" aria-selected="false">ra_fild04</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ve_fild01-tab" data-toggle="tab" href="#ve_fild01" role="tab" aria-controls="ve_fild01" aria-selected="false">ve_fild01</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ve_fild02-tab" data-toggle="tab" href="#ve_fild02" role="tab" aria-controls="ve_fild02" aria-selected="false">ve_fild02</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="gld_dun03_2-tab" data-toggle="tab" href="#gld_dun03_2" role="tab" aria-controls="gld_dun03_2" aria-selected="false">gld_dun03_2</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="ra_fild03" role="tabpanel" aria-labelledby="ra_fild03-tab">
+                        <div class="card">
+                            <h5 class="card-title">Atroce</h5>
+                            <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                            <div class="card-body">
+                                <p class="card-text" id="ra_fild03-time">3 horas</p>
+                                <input class="form-control time-input" type="time" id="ra_fild03-time-input">
+                                <button id="ra_fild03-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild03')">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="ra_fild04" role="tabpanel" aria-labelledby="ra_fild04-tab">
-                    <div class="card">
-                        <h5 class="card-title">Atroce</h5>
-                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
-                        <div class="card-body">
-                            <p class="card-text" id="ra_fild04-time">5 horas</p>
-                            <input class="form-control time-input" type="time" id="ra_fild04-time-input">
-                            <button id="ra_fild04-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild04')">Reiniciar</button>
+                    <div class="tab-pane fade" id="ra_fild04" role="tabpanel" aria-labelledby="ra_fild04-tab">
+                        <div class="card">
+                            <h5 class="card-title">Atroce</h5>
+                            <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                            <div class="card-body">
+                                <p class="card-text" id="ra_fild04-time">5 horas</p>
+                                <input class="form-control time-input" type="time" id="ra_fild04-time-input">
+                                <button id="ra_fild04-btn" class="btn btn-success" onclick="regenerateTimer('ra_fild04')">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="ve_fild01" role="tabpanel" aria-labelledby="ve_fild01-tab">
-                    <div class="card">
-                        <h5 class="card-title">Atroce</h5>
-                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
-                        <div class="card-body">
-                            <p class="card-text" id="ve_fild01-time">3 horas</p>
-                            <input class="form-control time-input" type="time" id="ve_fild01-time-input">
-                            <button id="ve_fild01-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild01')">Reiniciar</button>
+                    <div class="tab-pane fade" id="ve_fild01" role="tabpanel" aria-labelledby="ve_fild01-tab">
+                        <div class="card">
+                            <h5 class="card-title">Atroce</h5>
+                            <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                            <div class="card-body">
+                                <p class="card-text" id="ve_fild01-time">3 horas</p>
+                                <input class="form-control time-input" type="time" id="ve_fild01-time-input">
+                                <button id="ve_fild01-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild01')">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="ve_fild02" role="tabpanel" aria-labelledby="ve_fild02-tab">
-                    <div class="card">
-                        <h5 class="card-title">Atroce</h5>
-                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
-                        <div class="card-body">
-                            <p class="card-text" id="ve_fild02-time">6 horas</p>
-                            <input class="form-control time-input" type="time" id="ve_fild02-time-input">
-                            <button id="ve_fild02-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild02')">Reiniciar</button>
+                    <div class="tab-pane fade" id="ve_fild02" role="tabpanel" aria-labelledby="ve_fild02-tab">
+                        <div class="card">
+                            <h5 class="card-title">Atroce</h5>
+                            <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                            <div class="card-body">
+                                <p class="card-text" id="ve_fild02-time">6 horas</p>
+                                <input class="form-control time-input" type="time" id="ve_fild02-time-input">
+                                <button id="ve_fild02-btn" class="btn btn-success" onclick="regenerateTimer('ve_fild02')">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="gld_dun03_2" role="tabpanel" aria-labelledby="gld_dun03_2-tab">
-                    <div class="card">
-                        <h5 class="card-title">Atroce</h5>
-                        <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
-                        <div class="card-body">
-                            <p class="card-text" id="gld_dun03_2-time">8 horas</p>
-                            <input class="form-control time-input" type="time" id="gld_dun03_2-time-input">
-                            <button id="gld_dun03_2-btn" class="btn btn-success" onclick="regenerateTimer('gld_dun03_2')">Reiniciar</button>
+                    <div class="tab-pane fade" id="gld_dun03_2" role="tabpanel" aria-labelledby="gld_dun03_2-tab">
+                        <div class="card">
+                            <h5 class="card-title">Atroce</h5>
+                            <img class="card-img-top" src="./resources/atroce.gif" alt="Card image cap" width="150" height="150">
+                            <div class="card-body">
+                                <p class="card-text" id="gld_dun03_2-time">8 horas</p>
+                                <input class="form-control time-input" type="time" id="gld_dun03_2-time-input">
+                                <button id="gld_dun03_2-btn" class="btn btn-success" onclick="regenerateTimer('gld_dun03_2')">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <h5 class="card-title">Aprendiz</h5>
-            <img class="card-img-top" src="./resources/aprendiz.gif" alt="Card image cap" width="150" height="150">
-            <div class="card-body">
-                <p class="card-text" id="aprendiz-time">1 hora</p>
-                <input class="form-control time-input" type="time" id="aprendiz-time-input">
-                <button id="aprendiz-btn" class="btn btn-success" onclick="regenerateTimer('aprendiz')">Reiniciar</button>
+        <div>
+            <div class="card">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="teg_dun01-tab" data-toggle="tab" href="#teg_dun01" role="tab" aria-controls="teg_dun01" aria-selected="true">teg_dun01</a>
+                    </li>
+                </ul>
+                <h5 class="card-title">Aprendiz</h5>
+                <img class="card-img-top" src="./resources/aprendiz.gif" alt="Card image cap" width="150" height="150">
+                <div class="card-body">
+                    <p class="card-text" id="aprendiz-time">1 hora</p>
+                    <input class="form-control time-input" type="time" id="aprendiz-time-input">
+                    <button id="aprendiz-btn" class="btn btn-success" onclick="regenerateTimer('aprendiz')">Reiniciar</button>
+                </div>
             </div>
         </div>
         <div>
@@ -188,6 +206,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gl_cas02_-tab" data-toggle="tab" href="#gl_cas02_" role="tab" aria-controls="gl_cas02_" aria-selected="true">gl_cas02_</a>
+                </li>
+            </ul>
             <h5 class="card-title">Bafomé Amaldiçoado</h5>
             <img class="card-img-top" src="./resources/bafome.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -197,6 +220,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="abbey03-tab" data-toggle="tab" href="#abbey03" role="tab" aria-controls="abbey03" aria-selected="true">abbey03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Belzebu</h5>
             <img class="card-img-top" src="./resources/bubu.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -206,6 +234,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="prt_sewb4-tab" data-toggle="tab" href="#prt_sewb4" role="tab" aria-controls="prt_sewb4" aria-selected="true">prt_sewb4</a>
+                </li>
+            </ul>
             <h5 class="card-title">Besouro-Ladrão Dourado</h5>
             <img class="card-img-top" src="./resources/gtb.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -215,6 +248,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="abbey02-tab" data-toggle="tab" href="#abbey02" role="tab" aria-controls="abbey02" aria-selected="true">abbey02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Bispo Decadente</h5>
             <img class="card-img-top" src="./resources/bispo.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -224,6 +262,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="bra_dun02-tab" data-toggle="tab" href="#bra_dun02" role="tab" aria-controls="bra_dun02" aria-selected="true">bra_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Boitatá</h5>
             <img class="card-img-top" src="./resources/boitata.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -233,6 +276,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="xmas_dun02-tab" data-toggle="tab" href="#xmas_dun02" role="tab" aria-controls="xmas_dun02" aria-selected="true">xmas_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Cavaleiro da Tempestade</h5>
             <img class="card-img-top" src="./resources/sk.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -242,6 +290,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="abyss_03-tab" data-toggle="tab" href="#abyss_03" role="tab" aria-controls="abyss_03" aria-selected="true">abyss_03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Detardeurus</h5>
             <img class="card-img-top" src="./resources/detar.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -251,6 +304,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gef_dun01-tab" data-toggle="tab" href="#gef_dun01" role="tab" aria-controls="gef_dun01" aria-selected="true">gef_dun01</a>
+                </li>
+            </ul>
             <h5 class="card-title">Drácula</h5>
             <img class="card-img-top" src="./resources/dracula.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -260,6 +318,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="treasure02-tab" data-toggle="tab" href="#treasure02" role="tab" aria-controls="treasure02" aria-selected="true">treasure02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Drake</h5>
             <img class="card-img-top" src="./resources/drake.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -303,6 +366,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="lhz_dun02-tab" data-toggle="tab" href="#lhz_dun02" role="tab" aria-controls="lhz_dun02" aria-selected="true">lhz_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Egnigem Cenia</h5>
             <img class="card-img-top" src="./resources/cenia.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -312,6 +380,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="in_sphinx5-tab" data-toggle="tab" href="#in_sphinx5" role="tab" aria-controls="in_sphinx5" aria-selected="true">in_sphinx5</a>
+                </li>
+            </ul>
             <h5 class="card-title">Faraó</h5>
             <img class="card-img-top" src="./resources/farao.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -355,6 +428,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="moc_fild17-tab" data-toggle="tab" href="#moc_fild17" role="tab" aria-controls="moc_fild17" aria-selected="true">moc_fild17</a>
+                </li>
+            </ul>
             <h5 class="card-title">Freeoni</h5>
             <img class="card-img-top" src="./resources/freeoni.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -364,6 +442,25 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="lasa_dun01-tab" data-toggle="tab" href="#lasa_dun01" role="tab" aria-controls="lasa_dun01" aria-selected="true">lasa_dun01</a>
+                </li>
+            </ul>
+            <h5 class="card-title">Gemaring</h5>
+            <img class="card-img-top" src="./resources/gemaring.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="gemaring-time">1 hora</p>
+                <input class="form-control time-input" type="time" id="gemaring-time-input">
+                <button id="gemaring-btn" class="btn btn-success" onclick="regenerateTimer('gemaring')">Reiniciar</button>
+            </div>
+        </div>
+        <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gld2_pay-tab" data-toggle="tab" href="#gld2_pay" role="tab" aria-controls="gld2_pay" aria-selected="true">gld2_pay</a>
+                </li>
+            </ul>
             <h5 class="card-title">General Daehyun</h5>
             <img class="card-img-top" src="./resources/daehyun.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -373,6 +470,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tur_dun04-tab" data-toggle="tab" href="#tur_dun04" role="tab" aria-controls="tur_dun04" aria-selected="true">tur_dun04</a>
+                </li>
+            </ul>
             <h5 class="card-title">General Tartaruga</h5>
             <img class="card-img-top" src="./resources/tartaruga.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -382,6 +484,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gld2_ald-tab" data-toggle="tab" href="#gld2_ald" role="tab" aria-controls="gld2_ald" aria-selected="true">gld2_ald</a>
+                </li>
+            </ul>
             <h5 class="card-title">Gioia</h5>
             <img class="card-img-top" src="./resources/gioia.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -391,6 +498,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="mosk_dun03-tab" data-toggle="tab" href="#mosk_dun03" role="tab" aria-controls="mosk_dun03" aria-selected="true">mosk_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Gorynych</h5>
             <img class="card-img-top" src="./resources/gory.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -400,6 +512,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gld2_gef-tab" data-toggle="tab" href="#gld2_gef" role="tab" aria-controls="gld2_gef" aria-selected="true">gld2_gef</a>
+                </li>
+            </ul>
             <h5 class="card-title">Guardião Morto Kades</h5>
             <img class="card-img-top" src="./resources/kades.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -409,6 +526,25 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="xmas_fild01-tab" data-toggle="tab" href="#xmas_fild01" role="tab" aria-controls="xmas_fild01" aria-selected="true">xmas_fild01</a>
+                </li>
+            </ul>
+            <h5 class="card-title">Hatii</h5>
+            <img class="card-img-top" src="./resources/hatii.gif" alt="Card image cap" width="150" height="150">
+            <div class="card-body">
+                <p class="card-text" id="hatii-time">2 horas</p>
+                <input class="form-control time-input" type="time" id="hatii-time-input">
+                <button id="hatii-btn" class="btn btn-success" onclick="regenerateTimer('hatii')">Reiniciar</button>
+            </div>
+        </div>
+        <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="thor_v03-tab" data-toggle="tab" href="#thor_v03" role="tab" aria-controls="thor_v03" aria-selected="true">thor_v03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Ifrit</h5>
             <img class="card-img-top" src="./resources/ifrit.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -418,6 +554,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="kh_dun02-tab" data-toggle="tab" href="#kh_dun02" role="tab" aria-controls="kh_dun02" aria-selected="true">kh_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Kiel-D-01</h5>
             <img class="card-img-top" src="./resources/kiel.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -427,6 +568,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="iz_dun05-tab" data-toggle="tab" href="#iz_dun05" role="tab" aria-controls="iz_dun05" aria-selected="true">iz_dun05</a>
+                </li>
+            </ul>
             <h5 class="card-title">Kraken</h5>
             <img class="card-img-top" src="./resources/kraken.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -436,6 +582,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ice_dun03-tab" data-toggle="tab" href="#ice_dun03" role="tab" aria-controls="ice_dun03" aria-selected="true">ice_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Ktullanux</h5>
             <img class="card-img-top" src="./resources/ktullanux.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -445,6 +596,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="lou_dun03-tab" data-toggle="tab" href="#lou_dun03" role="tab" aria-controls="lou_dun03" aria-selected="true">lou_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Lady Branca</h5>
             <img class="card-img-top" src="./resources/ladyBranca.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -454,6 +610,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ayo_dun02-tab" data-toggle="tab" href="#ayo_dun02" role="tab" aria-controls="ayo_dun02" aria-selected="true">ayo_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Lady Tanee</h5>
             <img class="card-img-top" src="./resources/ladyTanee.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -463,6 +624,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="dew_dun01-tab" data-toggle="tab" href="#dew_dun01" role="tab" aria-controls="dew_dun01" aria-selected="true">dew_dun01</a>
+                </li>
+            </ul>
             <h5 class="card-title">Leak</h5>
             <img class="card-img-top" src="./resources/leak.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -520,6 +686,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="torre_de_thanatos-tab" data-toggle="tab" href="#torre_de_thanatos" role="tab" aria-controls="torre_de_thanatos" aria-selected="true">Torre de Thanatos</a>
+                </li>
+            </ul>
             <h5 class="card-title">Memória de Thanatos</h5>
             <img class="card-img-top" src="./resources/thanatos.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -529,6 +700,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="moc_fild22-tab" data-toggle="tab" href="#moc_fild22" role="tab" aria-controls="moc_fild22" aria-selected="true">moc_fild22</a>
+                </li>
+            </ul>
             <h5 class="card-title">Morroc Ferido</h5>
             <img class="card-img-top" src="./resources/morroc.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -538,6 +714,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gef_fild03-tab" data-toggle="tab" href="#gef_fild03" role="tab" aria-controls="gef_fild03" aria-selected="true">gef_fild03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Orc Herói</h5>
             <img class="card-img-top" src="./resources/ohero.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -547,6 +728,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="moc_pryd04-tab" data-toggle="tab" href="#moc_pryd04" role="tab" aria-controls="moc_pryd04" aria-selected="true">moc_pryd04</a>
+                </li>
+            </ul>
             <h5 class="card-title">Osíris</h5>
             <img class="card-img-top" src="./resources/osiris.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -556,6 +742,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ra_san05-tab" data-toggle="tab" href="#ra_san05" role="tab" aria-controls="ra_san05" aria-selected="true">ra_san05</a>
+                </li>
+            </ul>
             <h5 class="card-title">Pesar Noturno</h5>
             <img class="card-img-top" src="./resources/pesar.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -565,6 +756,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gld2_prt-tab" data-toggle="tab" href="#gld2_prt" role="tab" aria-controls="gld2_prt" aria-selected="true">gld2_prt</a>
+                </li>
+            </ul>
             <h5 class="card-title">Pyuriel Furiosa</h5>
             <img class="card-img-top" src="./resources/pyuriel.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -574,6 +770,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="dic_dun02-tab" data-toggle="tab" href="#dic_dun02" role="tab" aria-controls="dic_dun02" aria-selected="true">dic_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Rainha Scaraba</h5>
             <img class="card-img-top" src="./resources/scaraba.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -583,6 +784,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="dic_dun03-tab" data-toggle="tab" href="#dic_dun03" role="tab" aria-controls="dic_dun03" aria-selected="true">dic_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Rainha Scaraba Dourada</h5>
             <img class="card-img-top" src="./resources/scaraba.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -592,6 +798,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ein_dun02-tab" data-toggle="tab" href="#ein_dun02" role="tab" aria-controls="ein_dun02" aria-selected="true">ein_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">RSX-0806</h5>
             <img class="card-img-top" src="./resources/RSX.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -601,6 +812,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ama_dun03-tab" data-toggle="tab" href="#ama_dun03" role="tab" aria-controls="ama_dun03" aria-selected="true">ama_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Samurai Encarnado</h5>
             <img class="card-img-top" src="./resources/samurai.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -672,6 +888,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="Nifflheim-tab" data-toggle="tab" href="#Nifflheim" role="tab" aria-controls="Nifflheim" aria-selected="true">Nifflheim</a>
+                </li>
+            </ul>
             <h5 class="card-title">Senhor dos Mortos</h5>
             <img class="card-img-top" src="./resources/deathLord.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -681,6 +902,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gef_fild10-tab" data-toggle="tab" href="#gef_fild10" role="tab" aria-controls="gef_fild10" aria-selected="true">gef_fild10</a>
+                </li>
+            </ul>
             <h5 class="card-title">Senhor dos Orcs</h5>
             <img class="card-img-top" src="./resources/orcLord.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -690,6 +916,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="gon_dun03-tab" data-toggle="tab" href="#gon_dun03" role="tab" aria-controls="gon_dun03" aria-selected="true">gon_dun03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Serpente Suprema</h5>
             <img class="card-img-top" src="./resources/snakeLord.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -699,6 +930,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="teg_dun02-tab" data-toggle="tab" href="#teg_dun02" role="tab" aria-controls="teg_dun02" aria-selected="true">teg_dun02</a>
+                </li>
+            </ul>
             <h5 class="card-title">Superaprendiz</h5>
             <img class="card-img-top" src="./resources/superAprendiz.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -708,6 +944,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="beach_dun-tab" data-toggle="tab" href="#beach_dun" role="tab" aria-controls="beach_dun" aria-selected="true">beach_dun</a>
+                </li>
+            </ul>
             <h5 class="card-title">Tao Gunka</h5>
             <img class="card-img-top" src="./resources/taoGunka.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -717,6 +958,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="odin_tem03-tab" data-toggle="tab" href="#odin_tem03" role="tab" aria-controls="odin_tem03" aria-selected="true">odin_tem03</a>
+                </li>
+            </ul>
             <h5 class="card-title">Valquíria Randgris</h5>
             <img class="card-img-top" src="./resources/valk.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -726,6 +972,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="jupe_core-tab" data-toggle="tab" href="#jupe_core" role="tab" aria-controls="jupe_core" aria-selected="true">jupe_core</a>
+                </li>
+            </ul>
             <h5 class="card-title">Vesper</h5>
             <img class="card-img-top" src="./resources/vesper.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
@@ -735,6 +986,11 @@
             </div>
         </div>
         <div class="card">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="c_tower3_-tab" data-toggle="tab" href="#c_tower3_" role="tab" aria-controls="c_tower3_" aria-selected="true">c_tower3_</a>
+                </li>
+            </ul>
             <h5 class="card-title">Vigia do Tempo</h5>
             <img class="card-img-top" src="./resources/timeholder.gif" alt="Card image cap" width="150" height="150">
             <div class="card-body">
