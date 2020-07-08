@@ -2,6 +2,8 @@ var intervals = new Object();
 
 function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp) {
     var respawn;
+    var musicPlayed;
+    var toastGenerated;
     if (deathHour != undefined && deathMinute != undefined) {
         respawn = moment().hour(deathHour).minutes(deathMinute).add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     } else {
@@ -17,10 +19,93 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
         $(div).html(hours + "h " + minutes + "m " + seconds + "s");
         if (distance <= 0 && distance >= -600000) {
             $(div).html("Em Respawn!");
+            /*             if ($(".toast_container").has("#" + mvpNameMap[mvp][0]).length <= 0) */
+            if (!toastGenerated) {
+                generateToast(mvpNameMap[mvp][1], mvpNameMap[mvp][0]);
+                toastGenerated = true;
+            }
+
+
+            if (!musicPlayed) {
+                let src = 'https://www.myinstants.com/media/sounds/tuturu_1.mp3';
+                let audio = new Audio(src);
+                audio.play();
+                musicPlayed = true;
+            }
+        }
+        if (distance < -600000) {
+            $(div).html("MVP Vivo!");
         }
     }, 1000)
 }
-
+mvpNameMap = {
+    amonra: ["Amon Ra", 'amonra'],
+    mjolnir_04: ["Abelha-Rainha", 'abelhaRainha'],
+    gld_dun02: ["Abelha-Rainha", 'abelhaRainha'],
+    amonraPesadelo: ["Amon Ra do Pesadelo", 'amonraPesadelo'],
+    ra_fild03: ["Atroce", 'atroce'],
+    ra_fild04: ["Atroce", 'atroce'],
+    ve_fild01: ["Atroce", 'atroce'],
+    ve_fild02: ["Atroce", 'atroce'],
+    gld_dun03_2: ["Atroce", 'atroce'],
+    aprendiz: ["Aprendiz", 'aprendiz'],
+    prt_maze03: ["Bafomé", 'bafome'],
+    gld_dun03: ["Bafomé", 'bafome'],
+    bafoAmaldicoado: ["Bafomé Amaldiçoado", 'bafome'],
+    belzebu: ["Belzebu", 'bubu'],
+    gtb: ["Besouro-Ladrão Dourado", 'gtb'],
+    bispo: ["Bispo Decadente", 'bispo'],
+    boitata: ["Boitata", 'boitata'],
+    sk: ["Cavaleiro da Tempestade", 'sk'],
+    detar: ["Detardeurus", 'detar'],
+    dracula: ["Drácula", 'dracula'],
+    drake: ["Drake", 'drake'],
+    pay_fild10: ["Eddga", 'eddga'],
+    gld_dun01_2: ["Eddga", 'eddga'],
+    cenia: ["Egnigem Cenia", 'cenia'],
+    farao: ["Faraó", 'farao'],
+    pay_dun04: ["Flor do Luar", 'flor'],
+    gld_dun01: ["Flor do Luar", 'flor'],
+    freeoni: ["Freeoni", 'freeoni'],
+    daehyun: ["General Daehyun", 'daehyun'],
+    tartaruga: ["General Tartaruga", 'tartaruga'],
+    gioia: ["Gioia", 'gioia'],
+    gory: ["Gorynych", 'gory'],
+    ifrit: ["Ifrit", 'ifri'],
+    kiel: ["Kiel-D-01", 'kiel'],
+    kraken: ["Kraken", 'kraken'],
+    ktullanux: ["Ktullanux", 'ktullanux'],
+    ladyBranca: ["Lady Branca", 'ladyBranca'],
+    ladyTanee: ["Lady Tanee", 'ladyTanee'],
+    leak: ["Leak", 'leak'],
+    thanatos: ["Memória de Thanatos", 'thanatos'],
+    morroc: ["Morroc Ferido", 'morroc'],
+    ohero: ["Orc Herói", 'ohero'],
+    osiris: ["Osíris", 'osiris'],
+    pesar: ["Pesar Noturno", 'pesar'],
+    pyuriel: ["Pyuriel Furiosa", 'pyuriel'],
+    anthell02: ["Maya", 'maya'],
+    gld_dun03_maya: ["Maya", 'maya'],
+    gld_dun02_2: ["Maya", 'maya'],
+    scaraba: ["Rainha Scaraba", 'scaraba'],
+    scarabaGolden: ["Rainha Scaraba Dourada", 'scaraba'],
+    RSX: ["RSX-0806", 'rsx'],
+    samurai: ["Samurai Encarnado", 'samurai'],
+    gl_chyard: ["Senhor das Trevas", 'darkLord'],
+    gl_chyard_: ["Senhor das Trevas", 'darkLord'],
+    gld_dun04: ["Senhor das Trevas", 'darkLord'],
+    gld_dun04_2: ["Senhor das Trevas", 'darkLord'],
+    deathLord: ["Senhor dos Mortos", 'deathLord'],
+    orcLord: ["Senhor dos Orcs", 'orcLord'],
+    snakeLord: ["Serpente Suprema", 'snakeLord'],
+    superAprendiz: ["Super-Aprendiz", 'superAprendiz'],
+    taoGunka: ["Tao Gunka", 'taoGunka'],
+    valk: ["Valquíria Randgris", 'valk'],
+    vesper: ["Vesper", 'vesper'],
+    timeholder: ["Vigia do Tempo", 'timeholder'],
+    gemaring: ["Gemaring", 'gemaring'],
+    hatii: ["Hatii", 'hatii']
+}
 mvpMap = {
     amonra: (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#amonra-time", "amonra"),
     mjolnir_04: (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#mjolnir_04-time", "mjolnir_04"),
@@ -102,6 +187,36 @@ function init() {
     /*     let mvpTimers = Object.values(mvpMap);
         mvpTimers.forEach((value) => value()); */
 }
+$(window).scroll(function() {
+    let pos = $(window).scrollTop() + 5;
+    pos = pos + "px";
+    $(".toast-full").css({ top: pos });
+});
+
+var template = '<div class="toast" id="{PLACEHOLDERID}"role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">' +
+    '<div class="toast-header">' +
+    '    <img src="./resources/!!mvpImage.gif" class="rounded mr-2" alt="...">' +
+    '    <strong class="mr-auto">MVP Em respawn/vivo</strong>' +
+    '    <button type="button" class="ml-2 mb-1 close close-{PLACEHOLDERID}" data-dismiss="toast" aria-label="Close">' +
+    '<span aria-hidden="true">&times;</span>' +
+    '</button>' +
+    '</div>' +
+    '<div class="toast-body">' +
+    '{PLACEHOLDERMVP}' +
+    '</div>' +
+    '</div>'
+
+function generateToast(mvpId, mvpName) {
+    if ($(".toast_container").has("#" + mvpId).length <= 0)
+        $(".toast_container").append(template.replace('{PLACEHOLDERID}', mvpId).replace('{PLACEHOLDERMVP}', mvpName).replace('!!mvpImage', mvpId));
+    $('#' + mvpId).toast('show')
+}
+
+function closeToast(divId) {
+    $("." + divId).remove();
+}
+
+
 
 
 $(document).ready(init());

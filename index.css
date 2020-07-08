@@ -25,10 +25,6 @@
     align-items: center;
 }
 
-#test-clock {
-    background-color: aquamarine;
-}
-
 .time-input {
     width: 100%;
     margin-bottom: 5%;
@@ -49,4 +45,14 @@
 
 .card-text {
     font-weight: bold;
+}
+
+.toast-full {
+    z-index: 999;
+    position: absolute;
+    right: 0;
+}
+
+.toast_container {
+    width: 250px;
 }
