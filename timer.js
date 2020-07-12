@@ -133,7 +133,6 @@ function reRender() {
 }
 
 function init() {
-    localStorage.removeItem('__vp_fingerprint');
     reRender();
 }
 
@@ -167,6 +166,7 @@ function showFavorites() {
     let favoritedMVPs = Object.keys(localStorage);
     clearMain();
     favoritedMVPs.forEach((key) => {
+        if (key == "__vp_fingerprint") continue;
         loadCard(key, mvpInfoMap[key][5]);
     })
 }
