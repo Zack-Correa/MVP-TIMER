@@ -166,7 +166,7 @@ function showFavorites() {
     let favoritedMVPs = Object.keys(localStorage);
     clearMain();
     favoritedMVPs.forEach((key) => {
-        if (key == "__vp_fingerprint") continue;
+        if (key == "__vp_fingerprint") return;
         loadCard(key, mvpInfoMap[key][5]);
     })
 }
