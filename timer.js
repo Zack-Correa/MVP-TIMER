@@ -93,17 +93,11 @@ mvpInfoMap = {
     gld_dun03_maya: ["Maya", 'maya', 'gld_dun03_maya', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03_maya-time", "gld_dun03_maya"), true],
     gld_dun02_2: ["Maya", 'maya', 'gld_dun02_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun02_2-time", "gld_dun02_2"), true],
     dic_dun02: ["Rainha Scaraba", 'scaraba', 'dic_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun02-time", "dic_dun02"), false],
-<<<<<<< Updated upstream
     dic_dun03: ["Rainha Scaraba Dourada", 'scarabaGold', 'dic_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "scarabaGolden"), false],
-<<<<<<< HEAD
     ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
-=======
     ein_dun02: ["RSX-0806", 'rsx', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
-=======
     dic_dun03: ["Rainha Scaraba Dourada", 'scarabaGold', 'dic_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "dic_dun03"), false],
     ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
->>>>>>> Stashed changes
->>>>>>> dev
     ama_dun03: ["Samurai Encarnado", 'samurai', 'ama_dun03', '1 hora e 31 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#ama_dun03-time", "ama_dun03"), false],
     gl_chyard: ["Senhor das Trevas", 'darkLord', 'gl_chyard', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard-time", "gl_chyard"), true],
     gl_chyard_: ["Senhor das Trevas", 'darkLord', 'gl_chyard_', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard_-time", "gl_chyard_"), true],
