@@ -123,7 +123,7 @@ function init() {
     let mvpTimers = Object.keys(mvpInfoMap);
     mvpTimers.forEach((value) => {
         loadCard(value, mvpInfoMap[value][5])
-        mvpInfoMap[value][4]();
+            /* mvpInfoMap[value][4](); */
         console.log(value)
     });
 }
@@ -133,6 +133,23 @@ $(window).scroll(function() {
     pos = pos + "px";
     $(".toast-full").css({ top: pos });
 });
+
+$(".searchBar").on('input', () => {
+    $(".main-div").empty();
+    if ($(".searchBar").val() == "") {
+        init();
+        return;
+    }
+    let mvpValues = Object.entries(mvpInfoMap);
+    var regex = new RegExp($(".searchBar").val(), 'i');
+    mvpValues.forEach(([key, value]) => {
+        if (value.find(word => { if (typeof(word) == "string") { return word.match(regex); } }) != undefined) {
+            loadCard(key, mvpInfoMap[key][5])
+        }
+    });
+});
+
+
 
 function templateToast(placeholderId, placeholderMVP, mvpImage) {
     return `<div class="toast" id="${placeholderId}"role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">

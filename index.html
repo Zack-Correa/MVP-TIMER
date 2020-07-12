@@ -13,20 +13,41 @@
     <title>Timer MVP Ragnarok</title>
 </head>
 
-<body>
+<body class="bg-dark">
     <div>
         <div class="toast-full" aria-live="polite" aria-atomic="true" ata-delay="10000" style="position: absolute; min-height: 200px;">
             <div class="toast_container" style="position: absolute; top: 5; right: 0;">
             </div>
         </div>
-        <div class="main-div">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Ragnarok MVP Timer</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- SEPARADOR -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!--                     <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Organizar por</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Ordem Alfabética</a>
+                        </div>
+                    </li> -->
+                </ul>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 searchBar" type="search" placeholder="Buscar" aria-label="Search">
+                </form>
+            </div>
+        </nav>
+        <div class="main-div">
         </div>
     </div>
-
-
 </body>
+
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
