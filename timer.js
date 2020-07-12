@@ -10,7 +10,7 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
     } else {
         respawn = moment().add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     }
-    intervals[mvp] = setInterval(function() {
+    intervals[mvpInfoMap[mvp][2]] = setInterval(function() {
         let now = moment();
         let distance = respawn.diff(now);
         let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -40,76 +40,85 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
     }, 1000)
 }
 mvpInfoMap = {
-    moc_pryd06: ["Amon Ra", 'amonra', 'moc_pryd06', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_pryd06-time", "amonra"), false],
+    moc_pryd06: ["Amon Ra", 'amonra', 'moc_pryd06', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_pryd06-time", "moc_pryd06"), false],
     mjolnir_04: ["Abelha-Rainha", 'abelhaRainha', 'mjolnir_04', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#mjolnir_04-time", "mjolnir_04"), true],
     gld_dun02: ["Abelha-Rainha", 'abelhaRainha', 'gld_dun02', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun02-time", "gld_dun02"), true],
-    moc_prydn2: ["Amon Ra do Pesadelo", 'amonraPesadelo', 'moc_prydn2', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_prydn2-time", "amonraPesadelo"), false],
+    moc_prydn2: ["Amon Ra do Pesadelo", 'amonraPesadelo', 'moc_prydn2', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_prydn2-time", "moc_prydn2"), false],
     ra_fild03: ["Atroce", 'atroce', 'ra_fild03', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#ra_fild03-time", "ra_fild03"), true],
     ra_fild04: ["Atroce", 'atroce', 'ra_fild04', '5 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#ra_fild04-time", "ra_fild04"), true],
     ve_fild01: ["Atroce", 'atroce', 've_fild01', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#ve_fild01-time", "ve_fild01"), true],
     ve_fild02: ["Atroce", 'atroce', 've_fild02', '6 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '6', '0', "#ve_fild02-time", "ve_fild02"), true],
     gld_dun03_2: ["Atroce", 'atroce', 'gld_dun03_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03_2-time", "gld_dun03_2"), true],
-    eg_dun01: ["Aprendiz", 'aprendiz', 'eg_dun01', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#eg_dun01-time", "aprendiz"), false],
+    eg_dun01: ["Aprendiz", 'aprendiz', 'eg_dun01', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#eg_dun01-time", "eg_dun01"), false],
     prt_maze03: ["Bafomé", 'bafome', 'prt_maze03', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#prt_maze03-time", "prt_maze03"), true],
     gld_dun03: ["Bafomé", 'bafome', 'gld_dun03', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03-time", "gld_dun03"), true],
-    gl_cas02_: ["Bafomé Amaldiçoado", 'bafoAmaldicoado', 'gl_cas02_', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gl_cas02_-time", "bafoAmaldicoado"), false],
-    abbey03: ["Belzebu", 'bubu', 'abbey03', '12 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#abbey03-time", "belzebu"), false],
-    prt_sewb4: ["Besouro-Ladrão Dourado", 'gtb', 'prt_sewb4', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#prt_sewb4-time", "gtb"), false],
-    abbey02: ["Bispo Decadente", 'bispo', 'abbey02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#abbey02-time", "bispo"), false],
-    bra_dun02: ["Boitata", 'boitata', 'bra_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#bra_dun02-time", "boitata"), false],
-    xmas_dun02: ["Cavaleiro da Tempestade", 'sk', 'xmas_dun02', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#xmas_dun02-time", "sk"), false],
-    abyss_03: ["Detardeurus", 'detar', 'abyss_03', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#abyss_03-time", "detar"), false],
+    gl_cas02_: ["Bafomé Amaldiçoado", 'bafoAmaldicoado', 'gl_cas02_', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gl_cas02_-time", "gl_cas02_"), false],
+    abbey03: ["Belzebu", 'bubu', 'abbey03', '12 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#abbey03-time", "abbey03"), false],
+    prt_sewb4: ["Besouro-Ladrão Dourado", 'gtb', 'prt_sewb4', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#prt_sewb4-time", "prt_sewb4"), false],
+    abbey02: ["Bispo Decadente", 'bispo', 'abbey02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#abbey02-time", "abbey02"), false],
+    bra_dun02: ["Boitata", 'boitata', 'bra_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#bra_dun02-time", "bra_dun02"), false],
+    xmas_dun02: ["Cavaleiro da Tempestade", 'sk', 'xmas_dun02', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#xmas_dun02-time", "xmas_dun02"), false],
+    abyss_03: ["Detardeurus", 'detar', 'abyss_03', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#abyss_03-time", "abyss_03"), false],
     gef_dun02: ["Doppelganger", 'doppel', 'gef_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gef_dun02-time", "gef_dun02"), true],
     gld_dun04_doppel: ["Doppelganger", 'doppel', 'gld_dun04_doppel', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun04_doppel-time", "gld_dun04_doppel"), true],
-    gef_dun01: ["Drácula", 'dracula', 'gef_dun01', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gef_dun01-time", "dracula"), false],
-    treasure02: ["Drake", 'drake', 'treasure02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#treasure02-time", "drake"), false],
+    gef_dun01: ["Drácula", 'dracula', 'gef_dun01', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gef_dun01-time", "gef_dun01"), false],
+    treasure02: ["Drake", 'drake', 'treasure02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#treasure02-time", "treasure02"), false],
     pay_fild10: ["Eddga", 'eddga', 'pay_fild10', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#pay_fild10-time", "pay_fild10"), true],
     gld_dun01_2: ["Eddga", 'eddga', 'gld_dun01_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun01_2-time", "gld_dun01_2"), true],
     gld_dun01_eddga: ["Eddga", 'eddga', 'gld_dun01_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun01_eddga-time", "gld_dun01_eddga"), true],
-    lhz_dun02: ["Egnigem Cenia", 'cenia', 'lhz_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#lhz_dun02-time", "cenia"), false],
-    in_sphinx5: ["Faraó", 'farao', 'in_sphinx5', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#in_sphinx5-time", "farao"), false],
+    lhz_dun02: ["Egnigem Cenia", 'cenia', 'lhz_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#lhz_dun02-time", "lhz_dun02"), false],
+    in_sphinx5: ["Faraó", 'farao', 'in_sphinx5', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#in_sphinx5-time", "in_sphinx5"), false],
     pay_dun04: ["Flor do Luar", 'flor', 'pay_dun04', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#pay_dun04-time", "pay_dun04"), true],
     gld_dun01: ["Flor do Luar", 'flor', 'gld_dun01', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun01-time", "gld_dun01"), true],
-    moc_fild17: ["Freeoni", 'freeoni', 'moc_fild17', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#moc_fild17-time", "freeoni"), false],
-    gld2_pay: ["General Daehyun", 'daehyun', 'gld2_pay', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_pay-time", "daehyun"), false],
-    tur_dun04: ["General Tartaruga", 'tartaruga', 'tur_dun04', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#tur_dun04-time", "tartaruga"), false],
-    gld2_ald: ["Gioia", 'gioia', 'gld2_ald', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_ald-time", "gioia"), false],
-    mosk_dun03: ["Gorynych", 'gory', 'mosk_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#mosk_dun03-time", "gory"), false],
-    thor_v03: ["Ifrit", 'ifrit', 'thor_v03', '11 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '11', '0', "#thor_v03-time", "ifrit"), false],
-    kh_dun02: ["Kiel-D-01", 'kiel', 'kh_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#kh_dun02-time", "kiel"), false],
-    gld2_gef: ["Guardião Morto Kades", "kades", 'gld2_gef', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_gef-time", "kades"), false],
-    iz_dun05: ["Kraken", 'kraken', 'iz_dun05', '2 horas e 20 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '20', "#iz_dun05-time", "kraken"), false],
-    ice_dun03: ["Ktullanux", 'ktullanux', 'ice_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#ice_dun03-time", "ktullanux"), false],
-    lou_dun03: ["Lady Branca", 'ladyBranca', 'lou_dun03', '1 hora e 56 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '56', "#lou_dun03-time", "ladyBranca"), false],
-    ayo_dun02: ["Lady Tanee", 'ladyTanee', 'ayo_dun02', '7 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '7', '0', "#ayo_dun02-time", "ladyTanee"), false],
-    dew_dun01: ["Leak", 'leak', 'dew_dun01', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dew_dun01-time", "leak"), false],
-    ethana_boss: ["Memória de Thanatos", 'thanatos', 'ethana_boss', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#ethana_boss-time", "thanatos"), false],
-    moc_fild22: ["Morroc Ferido", 'morroc', 'moc_fild22', '12 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#moc_fild22-time", "morroc"), false],
-    gef_fild03: ["Orc Herói", 'ohero', 'gef_fild03', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gef_fild03-time", "ohero"), false],
-    moc_pryd04: ["Osíris", 'osiris', 'moc_pryd04', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_pryd04-time", "osiris"), false],
-    ra_san05: ["Pesar Noturno", 'pesar', 'ra_san05', '5 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#ra_san05-time", "pesar"), false],
-    gld2_prt: ["Pyuriel Furiosa", 'pyuriel', 'gld2_prt', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_prt-time", "pyuriel"), false],
+    moc_fild17: ["Freeoni", 'freeoni', 'moc_fild17', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#moc_fild17-time", "moc_fild17"), false],
+    gld2_pay: ["General Daehyun", 'daehyun', 'gld2_pay', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_pay-time", "gld2_pay"), false],
+    tur_dun04: ["General Tartaruga", 'tartaruga', 'tur_dun04', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#tur_dun04-time", "tur_dun04"), false],
+    gld2_ald: ["Gioia", 'gioia', 'gld2_ald', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_ald-time", "gld2_ald"), false],
+    mosk_dun03: ["Gorynych", 'gory', 'mosk_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#mosk_dun03-time", "mosk_dun03"), false],
+    thor_v03: ["Ifrit", 'ifrit', 'thor_v03', '11 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '11', '0', "#thor_v03-time", "thor_v03"), false],
+    kh_dun02: ["Kiel-D-01", 'kiel', 'kh_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#kh_dun02-time", "kh_dun02"), false],
+    gld2_gef: ["Guardião Morto Kades", "kades", 'gld2_gef', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_gef-time", "gld2_gef"), false],
+    iz_dun05: ["Kraken", 'kraken', 'iz_dun05', '2 horas e 20 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '20', "#iz_dun05-time", "iz_dun05"), false],
+    ice_dun03: ["Ktullanux", 'ktullanux', 'ice_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#ice_dun03-time", "ice_dun03"), false],
+    lou_dun03: ["Lady Branca", 'ladyBranca', 'lou_dun03', '1 hora e 56 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '56', "#lou_dun03-time", "lou_dun03"), false],
+    ayo_dun02: ["Lady Tanee", 'ladyTanee', 'ayo_dun02', '7 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '7', '0', "#ayo_dun02-time", "ayo_dun02"), false],
+    dew_dun01: ["Leak", 'leak', 'dew_dun01', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dew_dun01-time", "dew_dun01"), false],
+    ethana_boss: ["Memória de Thanatos", 'thanatos', 'ethana_boss', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#ethana_boss-time", "ethana_boss"), false],
+    moc_fild22: ["Morroc Ferido", 'morroc', 'moc_fild22', '12 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#moc_fild22-time", "moc_fild22"), false],
+    gef_fild03: ["Orc Herói", 'ohero', 'gef_fild03', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gef_fild03-time", "gef_fild03"), false],
+    moc_pryd04: ["Osíris", 'osiris', 'moc_pryd04', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#moc_pryd04-time", "moc_pryd04"), false],
+    ra_san05: ["Pesar Noturno", 'pesar', 'ra_san05', '5 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#ra_san05-time", "ra_san05"), false],
+    gld2_prt: ["Pyuriel Furiosa", 'pyuriel', 'gld2_prt', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_prt-time", "gld2_prt"), false],
     anthell02: ["Maya", 'maya', 'anthell02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#anthell02-time", "anthell02"), true],
     gld_dun03_maya: ["Maya", 'maya', 'gld_dun03_maya', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03_maya-time", "gld_dun03_maya"), true],
     gld_dun02_2: ["Maya", 'maya', 'gld_dun02_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun02_2-time", "gld_dun02_2"), true],
     dic_dun02: ["Rainha Scaraba", 'scaraba', 'dic_dun02', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun02-time", "dic_dun02"), false],
+<<<<<<< Updated upstream
     dic_dun03: ["Rainha Scaraba Dourada", 'scarabaGold', 'dic_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "scarabaGolden"), false],
+<<<<<<< HEAD
     ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
+=======
+    ein_dun02: ["RSX-0806", 'rsx', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
+=======
+    dic_dun03: ["Rainha Scaraba Dourada", 'scarabaGold', 'dic_dun03', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "dic_dun03"), false],
+    ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 horas e 5 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
+>>>>>>> Stashed changes
+>>>>>>> dev
     ama_dun03: ["Samurai Encarnado", 'samurai', 'ama_dun03', '1 hora e 31 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#ama_dun03-time", "ama_dun03"), false],
     gl_chyard: ["Senhor das Trevas", 'darkLord', 'gl_chyard', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard-time", "gl_chyard"), true],
     gl_chyard_: ["Senhor das Trevas", 'darkLord', 'gl_chyard_', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard_-time", "gl_chyard_"), true],
     gld_dun04: ["Senhor das Trevas", 'darkLord', 'gld_dun04', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun04-time", "gld_dun04"), true],
     gld_dun04_2: ["Senhor das Trevas", 'darkLord', 'gld_dun04_2', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun04_2-time", "gld_dun04_2"), true],
-    nifflheim: ["Senhor dos Mortos", 'deathLord', 'nifflheim', '2 horas e 13 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '13', "#nifflheim-time", "deathLord"), false],
-    gef_fild10: ["Senhor dos Orcs", 'orcLord', 'gef_fild10', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gef_fild10-time", "orcLord"), false],
-    gon_dun03: ["Serpente Suprema", 'snakeLord', 'gon_dun03', '1 hora e 34 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '34', "#gon_dun03-time", "snakeLord"), false],
-    teg_dun02: ["Super-Aprendiz", 'superAprendiz', 'teg_dun02', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#teg_dun02-time", "superAprendiz"), false],
-    beach_dun: ["Tao Gunka", 'taoGunka', 'beach_dun', '5 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#beach_dun-time", "taoGunka"), false],
-    odin_tem03: ["Valquíria Randgris", 'valk', 'odin_tem03', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#odin_tem03-time", "valk"), false],
-    jupe_core: ["Vesper", 'vesper', 'jupe_core', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#jupe_core-time", "vesper"), false],
-    c_tower3_: ["Vigia do Tempo", 'timeholder', 'c_tower3_', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#c_tower3_-time", "timeholder"), false],
-    lasa_dun01: ["Gemaring", 'gemaring', 'lasa_dun01', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#lasa_dun01-time", "gemaring"), false],
-    xmas_fild01: ["Hatii", 'hatii', 'xmas_fild01', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#xmas_fild01-time", "hatii")]
+    nifflheim: ["Senhor dos Mortos", 'deathLord', 'nifflheim', '2 horas e 13 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '13', "#nifflheim-time", "nifflheim"), false],
+    gef_fild10: ["Senhor dos Orcs", 'orcLord', 'gef_fild10', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gef_fild10-time", "gef_fild10"), false],
+    gon_dun03: ["Serpente Suprema", 'snakeLord', 'gon_dun03', '1 hora e 34 minutos', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '34', "#gon_dun03-time", "gon_dun03"), false],
+    teg_dun02: ["Super-Aprendiz", 'superAprendiz', 'teg_dun02', '3 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#teg_dun02-time", "teg_dun02"), false],
+    beach_dun: ["Tao Gunka", 'taoGunka', 'beach_dun', '5 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '5', '0', "#beach_dun-time", "beach_dun"), false],
+    odin_tem03: ["Valquíria Randgris", 'valk', 'odin_tem03', '8 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#odin_tem03-time", "odin_tem03"), false],
+    jupe_core: ["Vesper", 'vesper', 'jupe_core', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#jupe_core-time", "jupe_core"), false],
+    c_tower3_: ["Vigia do Tempo", 'timeholder', 'c_tower3_', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#c_tower3_-time", "c_tower3_"), false],
+    lasa_dun01: ["Gemaring", 'gemaring', 'lasa_dun01', '1 hora', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#lasa_dun01-time", "lasa_dun01"), false],
+    xmas_fild01: ["Hatii", 'hatii', 'xmas_fild01', '2 horas', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#xmas_fild01-time", "xmas_fild01")]
 }
 
 function regenerateTimer(mvp) {
@@ -119,13 +128,23 @@ function regenerateTimer(mvp) {
     mvpInfoMap[mvp][4](hourMinute[0], hourMinute[1]);
 }
 
-function init() {
+function reRender() {
+    clearMain();
     let mvpTimers = Object.keys(mvpInfoMap);
     mvpTimers.forEach((value) => {
         loadCard(value, mvpInfoMap[value][5])
-            /* mvpInfoMap[value][4](); */
         console.log(value)
     });
+    console.log(localStorage);
+}
+
+function init() {
+    reRender();
+}
+
+function clearMain() {
+    $(".main-div").empty();
+    appendedMVPs = [];
 }
 
 $(window).scroll(function() {
@@ -135,9 +154,9 @@ $(window).scroll(function() {
 });
 
 $(".searchBar").on('input', () => {
-    $(".main-div").empty();
+    clearMain();
     if ($(".searchBar").val() == "") {
-        init();
+        reRender();
         return;
     }
     let mvpValues = Object.entries(mvpInfoMap);
@@ -148,6 +167,28 @@ $(".searchBar").on('input', () => {
         }
     });
 });
+
+function showFavorites() {
+    let favoritedMVPs = Object.keys(localStorage);
+    clearMain();
+    favoritedMVPs.forEach((key) => {
+        loadCard(key, mvpInfoMap[key][5]);
+    })
+}
+
+function setFavorite(map, favDiv) {
+    let favoritedDiv = $("#" + favDiv);
+    if (favoritedDiv.attr('class').includes("far")) {
+        localStorage.setItem(map, favDiv);
+        favoritedDiv.removeClass("far");
+        favoritedDiv.addClass("fas");
+    } else {
+        favoritedDiv.removeClass("fas");
+        favoritedDiv.addClass("far")
+        localStorage.removeItem(map);
+
+    }
+}
 
 
 
@@ -188,7 +229,10 @@ function appendMVPinTab(mvp, mvpName, mvpTime, map, first) {
                     <div class="card-body">
                         <p class="card-text" id="${map}-time">Tempo de respawn: ${mvpTime}</p>
                         <input class="form-control time-input" type="time" id="${map}-time-input">
+                        <div>
                         <button id="${map}-btn" class="btn btn-success" onclick="regenerateTimer('${map}')">Iniciar contador</button>
+                        <button id="${map}-btn-fav" class="btn btn-success" onclick="setFavorite('${map}', '${map}-fav')">Favoritar <i id="${map}-fav" class="${localStorage.getItem(map) != undefined ? "fas":"far"} fa-star"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>`);
