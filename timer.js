@@ -133,6 +133,7 @@ function reRender() {
 }
 
 function init() {
+    localStorage.removeItem('__vp_fingerprint');
     reRender();
 }
 
