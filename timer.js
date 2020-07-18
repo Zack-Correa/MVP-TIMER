@@ -1,7 +1,10 @@
 var intervals = new Object();
 var appendedMVPs = [];
+var timerMap = {};
 
 function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp) {
+    timerMap[mvp] = [deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp];
+    localStorage.timerMap = JSON.stringify(timerMap);
     var respawn;
     var musicPlayed;
     var toastGenerated;
@@ -127,13 +130,32 @@ function reRender() {
     let mvpTimers = Object.keys(mvpInfoMap);
     mvpTimers.forEach((value) => {
         loadCard(value, mvpInfoMap[value][5])
-        console.log(value)
     });
-    console.log(localStorage);
 }
 
 function init() {
     reRender();
+    if (location.search == "") {
+        localStorage.removeItem("timerMap");
+    } else {
+        loadFromURL();
+    }
+}
+
+function copyURL() {
+    var copyText = document.getElementById("textURL");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+}
+
+function loadFromURL() {
+    var loadedMap = Object.values(loadTimesFromURL());
+    loadedMap.forEach(value => {
+        clock(value[0], value[1], value[2], value[3], value[4], value[5]);
+    })
 }
 
 function clearMain() {
@@ -160,6 +182,10 @@ $(".searchBar").on('input', () => {
             loadCard(key, mvpInfoMap[key][5])
         }
     });
+});
+
+$("#modalGenerateButton").on('click', () => {
+    $("#textURL").val(getTimeURL());
 });
 
 function showFavorites() {
@@ -234,14 +260,13 @@ function appendMVPinTab(mvp, mvpName, mvpTime, map, first) {
 }
 
 function loadCard(mapKey, multiple) {
-    console.log(mapKey)
     let mvpInfo = mvpInfoMap[mapKey];
-    console.log(mvpInfo)
     let mvpName = mvpInfo[0];
     let mvp = mvpInfo[1];
     let map = mvpInfo[2];
     let mvpTime = mvpInfo[3];
     let first = false;
+
     if (multiple) {
         if (!appendedMVPs.includes(mvp)) {
             appendedMVPs.push(mvp);
@@ -264,6 +289,17 @@ function generateToast(mvpId, mvpName) {
 
 function closeToast(divId) {
     $("." + divId).remove();
+}
+
+function getTimeURL() {
+    return window.location.origin + window.location.pathname + '?timers=' + window.btoa(localStorage.timerMap);
+}
+
+function loadTimesFromURL() {
+    let timeString = location.search;
+    if (timeString == "") return;
+    let urlParams = new URLSearchParams(timeString);
+    return JSON.parse(window.atob(urlParams.get('timers')));
 }
 
 
