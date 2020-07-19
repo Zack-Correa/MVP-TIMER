@@ -298,7 +298,11 @@ function loadTimesFromURL() {
     let timeString = location.search;
     if (timeString == "") return;
     let urlParams = new URLSearchParams(timeString);
-    return JSON.parse(window.atob(urlParams.get('timers')));
+    let timers = urlParams.get('timers');
+    if (timers) {
+        return JSON.parse(window.atob(timers));
+    }
+    return;
 }
 
 
