@@ -152,10 +152,13 @@ function copyURL() {
 }
 
 function loadFromURL() {
-    var loadedMap = Object.values(loadTimesFromURL());
-    loadedMap.forEach(value => {
-        clock(value[0], value[1], value[2], value[3], value[4], value[5]);
-    })
+    let receivedObj = loadTimesFromURL();
+    if (receivedObj) {
+        let loadedMap = Object.values(receivedObj);
+        loadedMap.forEach(value => {
+            clock(value[0], value[1], value[2], value[3], value[4], value[5]);
+        })
+    }
 }
 
 function clearMain() {
